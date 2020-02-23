@@ -1,9 +1,7 @@
 {
     "package": {
         "dependencies": {
-            "axios": "^0.19.2"
-        },
-        "devDependencies": {
+            "axios": "^0.19.2",
             "@santospatrick/eslint-config-react": "^1.0.6",
             "@santospatrick/prettier-config": "^1.0.1",
             "eslint-config-prettier": "^6.10.0",
