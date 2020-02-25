@@ -19,6 +19,7 @@ npx create-react-app my-app --template @inovando
 - [x] [Styled Components](https://styled-components.com/docs/basics#react-native)
 - [x] [React Final Form](https://final-form.org/react)
 - [x] [Yup](https://runkit.com/jquense/yup)
+- [x] [Husky](https://github.com/typicode/husky)/[Lint Staged](https://github.com/okonet/lint-staged)
 
 ### Why ESLint and plugins are dependencies?
 
