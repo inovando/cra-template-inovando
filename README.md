@@ -1,6 +1,11 @@
 # `@inovando/cra-template`
 > ⚡️ Inovando's template for create-react-app
 
+[![NPM version](https://img.shields.io/npm/v/@inovando/cra-template.svg)](https://www.npmjs.com/package/@inovando/cra-template)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+
+![Package Main Techs](docs/techs.png)
+
 ## Usage
 
 1. Initialize your project with this command:
@@ -26,7 +31,7 @@ Build and serve `build/` folder
 ## Features
 - [x] [ESLint](https://github.com/santospatrick/eslint-config-react)/[Prettier](https://github.com/santospatrick/prettier-config)
 - [x] [Axios](https://www.npmjs.com/package/axios)
-- [x] [Styled Components](https://styled-components.com/docs/basics#react-native)
+- [x] [Styled Components](https://styled-components.com/)
 - [x] [React Final Form](https://final-form.org/react)
 - [x] [Yup](https://runkit.com/jquense/yup)
 - [x] [Husky](https://github.com/typicode/husky)/[Lint Staged](https://github.com/okonet/lint-staged)
