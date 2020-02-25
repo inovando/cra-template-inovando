@@ -31,6 +31,7 @@ Build and serve `build/` folder
 - [x] [Yup](https://runkit.com/jquense/yup)
 - [x] [Husky](https://github.com/typicode/husky)/[Lint Staged](https://github.com/okonet/lint-staged)
 - [x] [Material UI](https://material-ui.com/)
+- [x] [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
 
 ## FAQ
 
