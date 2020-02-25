@@ -23,7 +23,7 @@ function LoginForm({ onSubmit }) {
       onSubmit={onSubmit}
       decorators={[focusOnErrors]}
       validate={validate(schema)}
-      render={({ handleSubmit }) => (
+      render={({ handleSubmit, submitting }) => (
         <form onSubmit={handleSubmit} noValidate>
           <div>
             <Field name="email" type="email" component="input" />
@@ -34,7 +34,7 @@ function LoginForm({ onSubmit }) {
             <Error name="password" />
           </div>
 
-          <button type="submit">enviar</button>
+          <button disabled={submitting} type="submit">enviar</button>
         </form>
       )}
     />
