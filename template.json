@@ -22,7 +22,8 @@
             "lint-staged": "^10.0.7",
             "serve": "^11.3.0",
             "history": "^4.10.1",
-            "react-router-dom": "^5.1.2"
+            "react-router-dom": "^5.1.2",
+            "format-string-by-pattern": "^1.1.1"
         },
         "eslintConfig": {
             "extends": "@santospatrick/eslint-config-react"
