@@ -3,11 +3,15 @@
 
 ## Usage
 
-Initialize your project with this command:
+1. Initialize your project with this command:
 
 ```
 npx create-react-app my-app --template @inovando
 ```
+
+2. Duplicate `.env.example` to `.env.development.local` and `.env.production` fulfilling variables as needed
+
+3. Done 🎉
 
 ## Features
 - [x] [ESLint](https://github.com/santospatrick/eslint-config-react)/[Prettier](https://github.com/santospatrick/prettier-config)
