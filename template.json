@@ -1,5 +1,9 @@
 {
     "package": {
+        "scripts": {
+            "serve": "serve -s build",
+            "build-and-serve": "yarn build && yarn serve"
+        },
         "dependencies": {
             "axios": "^0.19.2",
             "@santospatrick/eslint-config-react": "^1.0.6",
@@ -13,7 +17,8 @@
             "react-final-form": "^6.3.5",
             "yup": "^0.28.1",
             "husky": "^4.2.3",
-            "lint-staged": "^10.0.7"
+            "lint-staged": "^10.0.7",
+            "serve": "^11.3.0"
         },
         "eslintConfig": {
             "extends": "@santospatrick/eslint-config-react"
