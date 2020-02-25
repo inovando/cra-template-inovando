@@ -21,6 +21,14 @@ npx create-react-app my-app --template @inovando
 - [x] [Yup](https://runkit.com/jquense/yup)
 - [x] [Husky](https://github.com/typicode/husky)/[Lint Staged](https://github.com/okonet/lint-staged)
 
+## FAQ
+
 ### Why ESLint and plugins are dependencies?
 
 Until the release date of this package, create react app [does not support devDependencies](https://github.com/facebook/create-react-app/issues/8082) field at `template.json`
+
+### Git hooks not working
+
+```
+rm -rf node_modules && yarn
+```
