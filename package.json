@@ -1,6 +1,6 @@
 {
   "name": "@inovando/cra-template",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "main": "template.json",
   "repository": "git@github.com:inovando/cra-template-inovando.git",
   "author": "Patrick Santos <patrickspteixeira@gmail.com>",
