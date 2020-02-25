@@ -6,7 +6,8 @@
             "@santospatrick/prettier-config": "^1.0.1",
             "eslint-config-prettier": "^6.10.0",
             "eslint-plugin-prettier": "^3.1.2",
-            "sanitize.css": "^11.0.0"
+            "sanitize.css": "^11.0.0",
+            "styled-components": "^5.0.1"
         },
         "eslintConfig": {
             "extends": "@santospatrick/eslint-config-react"
