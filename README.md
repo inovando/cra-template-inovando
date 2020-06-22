@@ -6,6 +6,10 @@
 
 ![Package Main Techs](docs/techs.png)
 
+## Preview
+
+![Template Preview (Chrome)](docs/preview.gif)
+
 ## Usage
 
 1. Initialize your project with this command:

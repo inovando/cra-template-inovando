@@ -1,17 +1,21 @@
 import React from 'react';
-import history from 'services/history';
 
 import Inovando from 'images/inovando.png';
 import Centered from 'components/Centered';
 import LoginForm from 'forms/LoginForm';
 import { Container, FormContainer } from 'styles/global';
-
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+import { useAuth } from 'contexts/auth';
+import { useHistory, useLocation } from 'react-router-dom';
 
 function Home() {
-  const onSubmit = async () => {
-    await sleep(1000);
-    history.push('Dashboard');
+  const history = useHistory();
+  const location = useLocation();
+  const { signIn } = useAuth();
+  const { from } = location.state || { from: { pathname: '/' } };
+
+  const onSubmit = async values => {
+    await signIn(values);
+    history.replace(from);
   };
 
   return (

@@ -1,23 +1,30 @@
 import React from 'react';
-import { Router, Switch, Route } from 'react-router-dom';
+import { Router, Switch, Route, Redirect } from 'react-router-dom';
 
 import Home from 'pages/Home';
 import Dashboard from 'pages/Dashboard';
 import history from 'services/history';
-
-const routes = [
-  { path: '/', component: Home },
-  { path: '/dashboard', component: Dashboard },
-];
+import PrivateRoute from 'components/PrivateRoute';
+import { useAuth } from 'contexts/auth';
 
 function Routes() {
-  const routeComponents = routes.map(({ path, component }, key) => (
-    <Route exact path={path} component={component} key={key} />
-  ));
+  const { loading } = useAuth();
+
+  if (loading) return null;
 
   return (
     <Router history={history}>
-      <Switch>{routeComponents}</Switch>
+      <Switch>
+        <Route exact path="/login">
+          <Home />
+        </Route>
+        <PrivateRoute exact path="/">
+          <Dashboard />
+        </PrivateRoute>
+        <Route path="*">
+          <Redirect to="/" />
+        </Route>
+      </Switch>
     </Router>
   );
 }
