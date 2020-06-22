@@ -1,23 +1,32 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import history from 'services/history';
 
 import Inovando from 'images/inovando.png';
 import Centered from 'components/Centered';
+import LoginForm from 'forms/LoginForm';
+import { Container, FormContainer } from 'styles/global';
+
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 function Home() {
+  const onSubmit = async () => {
+    await sleep(1000);
+    history.push('Dashboard');
+  };
+
   return (
-    <Centered column>
-      <img src={Inovando} alt="Inovando's Logo" />
-      <div>A template by @inovando</div>
-      <Button
-        style={{ marginTop: 10 }}
-        variant="contained"
-        onClick={() => history.push('/dashboard')}
-      >
-        Go to Dashboard
-      </Button>
-    </Centered>
+    <Container>
+      <Centered column>
+        <img
+          style={{ width: 200, marginBottom: 20 }}
+          src={Inovando}
+          alt="Inovando's Logo"
+        />
+        <FormContainer>
+          <LoginForm onSubmit={onSubmit} />
+        </FormContainer>
+      </Centered>
+    </Container>
   );
 }
 

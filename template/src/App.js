@@ -1,14 +1,16 @@
 import React from 'react';
+import { ThemeProvider } from '@material-ui/core';
 
 import GlobalStyle from 'styles/global';
+import theme from 'config/theme';
 import Routes from 'routes';
 
 function App() {
   return (
-    <React.Fragment>
+    <ThemeProvider theme={theme}>
       <Routes />
       <GlobalStyle />
-    </React.Fragment>
+    </ThemeProvider>
   );
 }
 

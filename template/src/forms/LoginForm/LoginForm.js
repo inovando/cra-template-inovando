@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 
 import { validate } from 'utils/validate';
 import { schema } from './schema';
+import { Box } from '@material-ui/core';
 
 const focusOnErrors = createDecorator();
 
@@ -36,15 +37,17 @@ function LoginForm({ onSubmit }) {
             variant="outlined"
           />
 
-          <Button
-            disabled={submitting}
-            fullWidth
-            variant="contained"
-            color="primary"
-            type="submit"
-          >
-            Enviar
-          </Button>
+          <Box mt={3}>
+            <Button
+              disabled={submitting}
+              fullWidth
+              variant="contained"
+              color="primary"
+              type="submit"
+            >
+              Enviar
+            </Button>
+          </Box>
         </form>
       )}
     />
