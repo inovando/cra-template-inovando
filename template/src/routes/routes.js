@@ -1,11 +1,11 @@
 import React from 'react';
 import { Router, Switch, Route, Redirect } from 'react-router-dom';
 
-import Home from 'pages/Home';
-import Dashboard from 'pages/Dashboard';
 import history from 'services/history';
 import PrivateRoute from 'components/PrivateRoute';
 import { useAuth } from 'contexts/auth';
+import LoggedLayout from 'layouts/LoggedLayout';
+import config from './config';
 
 function Routes() {
   const { loading } = useAuth();
@@ -15,12 +15,18 @@ function Routes() {
   return (
     <Router history={history}>
       <Switch>
-        <Route exact path="/login">
-          <Home />
-        </Route>
-        <PrivateRoute exact path="/">
-          <Dashboard />
-        </PrivateRoute>
+        {config.public.map(({ component: Component, ...rest }, i) => (
+          <Route key={i} {...rest}>
+            <Component />
+          </Route>
+        ))}
+        <LoggedLayout routes={config}>
+          {config.protected.map(({ component: Component, ...rest }, i) => (
+            <PrivateRoute key={i} {...rest}>
+              <Component />
+            </PrivateRoute>
+          ))}
+        </LoggedLayout>
         <Route path="*">
           <Redirect to="/" />
         </Route>
