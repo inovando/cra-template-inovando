@@ -7,12 +7,18 @@ import PeopleIcon from '@material-ui/icons/People';
 // Pages
 import Login from 'pages/Login';
 import Dashboard from 'pages/Dashboard';
+import ForgotPassword from 'pages/ForgotPassword';
 
 const config = {
   public: [
     {
       path: '/login',
       component: Login,
+      exact: true,
+    },
+    {
+      path: '/esqueci-minha-senha',
+      component: ForgotPassword,
       exact: true,
     },
   ],

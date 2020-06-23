@@ -8,7 +8,10 @@
 
 ## Preview
 
-![Template Preview (Chrome)](docs/preview.gif)
+|   Desktop   |  Mobile  |
+|---------|-----------|
+| ![Template Chrome Desktop Preview](docs/preview-desktop.gif) | ![Template Mobile Preview](docs/preview-mobile.gif) |
+
 
 ## Usage
 
