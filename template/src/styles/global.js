@@ -1,5 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
+import 'react-toastify/dist/ReactToastify.min.css';
+
 const GlobalStyle = createGlobalStyle`
   html, body, #root {
     height: 100%;
@@ -11,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
   }
 
-  #root > div {
+  #root > div:not(.Toastify) {
     margin: auto;
     padding: 30px;
   }

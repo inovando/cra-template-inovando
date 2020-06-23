@@ -3,11 +3,13 @@ import React from 'react';
 // Icons
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import PeopleIcon from '@material-ui/icons/People';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
 // Pages
 import Login from 'pages/Login';
 import Dashboard from 'pages/Dashboard';
 import ForgotPassword from 'pages/ForgotPassword';
+import Profile from 'pages/Profile';
 
 const config = {
   public: [
@@ -36,6 +38,13 @@ const config = {
       title: 'Usuários',
       exact: true,
       icon: <PeopleIcon />,
+    },
+    {
+      path: '/profile',
+      component: Profile,
+      title: 'Perfil',
+      exact: true,
+      icon: <AccountBoxIcon />,
     },
   ],
 };

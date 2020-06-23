@@ -24,7 +24,8 @@
             "serve": "^11.3.0",
             "history": "^4.10.1",
             "react-router-dom": "^5.1.2",
-            "format-string-by-pattern": "^1.1.1"
+            "format-string-by-pattern": "^1.1.1",
+            "react-toastify": "^6.0.6"
         },
         "eslintConfig": {
             "extends": "@santospatrick/eslint-config-react",
