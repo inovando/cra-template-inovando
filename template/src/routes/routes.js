@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Switch, Route, Redirect } from 'react-router-dom';
+import { Router, Switch, Route } from 'react-router-dom';
 
 import history from 'services/history';
 import PrivateRoute from 'components/PrivateRoute';
@@ -27,9 +27,6 @@ function Routes() {
             </PrivateRoute>
           ))}
         </LoggedLayout>
-        <Route path="*">
-          <Redirect to="/" />
-        </Route>
       </Switch>
     </Router>
   );

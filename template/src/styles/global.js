@@ -13,11 +13,6 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
   }
 
-  #root > div:not(.Toastify) {
-    margin: auto;
-    padding: 30px;
-  }
-
   body {
     background-color: #edf5ff;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -26,13 +21,6 @@ const GlobalStyle = createGlobalStyle`
   .MuiFormControl-marginNormal {
     margin-top: 10px;
   }
-`;
-
-export const Container = styled.div`
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 30px;
 `;
 
 export const FormContainer = styled.div`

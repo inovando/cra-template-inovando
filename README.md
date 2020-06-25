@@ -23,7 +23,14 @@ npx create-react-app my-app --template @inovando
 
 2. Duplicate `.env.example` to `.env.development.local` and `.env.production` fulfilling variables as needed
 
-3. Done 🎉
+3. Run the following commands:
+
+```bash
+yarn start # React server
+yarn mock # Mock server (to see table example)
+```
+
+4. Done 🎉
 
 ## Scripts
 

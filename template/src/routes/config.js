@@ -10,6 +10,7 @@ import Login from 'pages/Login';
 import Dashboard from 'pages/Dashboard';
 import ForgotPassword from 'pages/ForgotPassword';
 import Profile from 'pages/Profile';
+import Users from 'pages/Users';
 
 const config = {
   public: [
@@ -34,7 +35,7 @@ const config = {
     },
     {
       path: '/users',
-      component: () => <div>Usuários</div>,
+      component: Users,
       title: 'Usuários',
       exact: true,
       icon: <PeopleIcon />,

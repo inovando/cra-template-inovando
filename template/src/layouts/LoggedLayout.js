@@ -18,7 +18,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Inovando from 'images/inovando-horizontal.svg';
 import ListItemLink from 'components/ListItemLink';
 import { useAuth } from 'contexts/auth';
-import { useLocation, matchPath } from 'react-router-dom';
+import { useLocation, matchPath, Redirect } from 'react-router-dom';
 import config from 'routes/config';
 
 const drawerWidth = 240;
@@ -57,8 +57,8 @@ const useStyles = makeStyles(theme => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
-    paddingTop: 64,
+    paddingTop: 84,
+    paddingBottom: 20,
   },
 }));
 
@@ -79,6 +79,10 @@ function LoggedLayout(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  if (!activeRoute) {
+    return <Redirect to="/" />;
+  }
+
   const drawer = (
     <div>
       <div className={classes.toolbar}>
@@ -91,13 +95,15 @@ function LoggedLayout(props) {
       </div>
       <Divider />
       <List>
-        {routes.protected.map(props => (
-          <ListItemLink
-            selected={activeRoute.path === props.path}
-            key={props.path}
-            {...props}
-          />
-        ))}
+        {routes.protected
+          .filter(route => !route.hideFromMenu)
+          .map(props => (
+            <ListItemLink
+              selected={activeRoute.path === props.path}
+              key={props.path}
+              {...props}
+            />
+          ))}
       </List>
       <Divider />
       <ListItem button onClick={signOut}>

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import ForgotPasswordForm from 'forms/ForgotPasswordForm';
 import { Typography, Button, Box } from '@material-ui/core';
-import { Container, FormContainer } from 'styles/global';
+import { FormContainer } from 'styles/global';
+import Centered from 'components/Centered';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -18,7 +19,7 @@ const ForgotPassword = () => {
 
   if (success) {
     return (
-      <Container>
+      <Centered column>
         <FormContainer>
           <Typography align="center">{email}</Typography>
           <Typography align="center">
@@ -36,19 +37,19 @@ const ForgotPassword = () => {
             </Button>
           </Box>
         </FormContainer>
-      </Container>
+      </Centered>
     );
   }
 
   return (
-    <Container>
+    <Centered column>
       <Typography variant="h6" mb={2} align="center">
         Esqueci minha senha
       </Typography>
       <FormContainer>
         <ForgotPasswordForm onSubmit={onSubmit} />
       </FormContainer>
-    </Container>
+    </Centered>
   );
 };
 
