@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container } from '@material-ui/core';
 import DataTable from 'components/DataTable';
-import usePagination from 'hooks/usePagination';
+import useTable from 'hooks/useTable';
 
 const columns = [
   {
@@ -16,7 +16,7 @@ const columns = [
 ];
 
 function Users() {
-  const dataTableProps = usePagination('users', {
+  const dataTableProps = useTable('users', {
     onRowClick,
   });
 
