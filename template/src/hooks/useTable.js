@@ -52,6 +52,10 @@ function useTable(endpoint, options) {
     setOrder(direction);
   }
 
+  function onRefresh() {
+    loadData();
+  }
+
   const onSearchDebounced = debounce(setSearch, 250);
 
   return {
@@ -67,6 +71,7 @@ function useTable(endpoint, options) {
     },
     data,
     loading,
+    onRefresh,
   };
 }
 

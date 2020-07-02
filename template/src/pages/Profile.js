@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import ProfileForm from 'forms/ProfileForm';
 import { FormContainer } from 'styles/global';
 import { useAuth } from 'contexts/auth';
+import { Container } from '@material-ui/core';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -17,9 +18,11 @@ function Profile() {
   };
 
   return (
-    <FormContainer>
-      <ProfileForm initialValues={user} onSubmit={onSubmit} />
-    </FormContainer>
+    <Container>
+      <FormContainer>
+        <ProfileForm initialValues={user} onSubmit={onSubmit} />
+      </FormContainer>
+    </Container>
   );
 }
 

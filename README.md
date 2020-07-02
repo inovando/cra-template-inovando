@@ -52,6 +52,7 @@ Build and serve `build/` folder
 - [x] [Material UI](https://material-ui.com/)
 - [x] [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
 - [x] [React Toastify](https://github.com/fkhadra/react-toastify)
+- [x] CRUD Example
 
 ## FAQ
 
