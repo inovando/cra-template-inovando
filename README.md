@@ -3,6 +3,8 @@
 
 [![NPM version](https://img.shields.io/npm/v/@inovando/cra-template.svg)](https://www.npmjs.com/package/@inovando/cra-template)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 
 ![Package Main Techs](docs/techs.png)
 
@@ -53,6 +55,7 @@ Build and serve `build/` folder
 - [x] [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
 - [x] [React Toastify](https://github.com/fkhadra/react-toastify)
 - [x] CRUD Example
+- [x] Commitizen Friendly
 
 ## FAQ
 

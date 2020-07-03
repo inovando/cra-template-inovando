@@ -3,7 +3,8 @@
         "scripts": {
             "serve": "serve -s build",
             "build-and-serve": "yarn build && yarn serve",
-            "mock": "json-server server.js --port 3010"
+            "mock": "json-server server.js --port 3010",
+            "release": "standard-version --no-verify"
         },
         "dependencies": {
             "@material-ui/core": "^4.9.4",
@@ -29,7 +30,10 @@
             "history": "^4.10.1",
             "react-router-dom": "^5.1.2",
             "format-string-by-pattern": "^1.1.1",
-            "react-toastify": "^6.0.6"
+            "react-toastify": "^6.0.6",
+            "@commitlint/cli": "^9.0.1",
+            "@commitlint/config-conventional": "^9.0.1",
+            "standard-version": "^8.0.0"
         },
         "eslintConfig": {
             "extends": "@santospatrick/eslint-config-react",
@@ -40,7 +44,8 @@
         "prettier": "@santospatrick/prettier-config",
         "husky": {
             "hooks": {
-                "pre-commit": "lint-staged"
+                "pre-commit": "lint-staged",
+                "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
             }
         },
         "lint-staged": {
