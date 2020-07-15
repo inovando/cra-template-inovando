@@ -28,6 +28,17 @@ export const AuthProvider = ({ children }) => {
 
       if (storagedUser && storagedToken) {
         api.defaults.headers.Authorization = `Bearer ${storagedToken}`;
+        api.interceptors.response.use(
+          function(response) {
+            return response;
+          },
+          function(error) {
+            if (error.response.status === 401) {
+              signOut();
+            }
+            return Promise.reject(error);
+          },
+        );
         setUser(JSON.parse(storagedUser));
       }
       setLoading(false);
