@@ -22,27 +22,48 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    function setInterceptors() {
+      api.interceptors.response.use(
+        function(response) {
+          return response;
+        },
+        function(error) {
+          if (error?.response?.status === 401) {
+            const signed = !!localStorage.getItem('@token');
+
+            if (signed) {
+              toast.error('Sua sessão expirou, logue novamente.');
+              signOut();
+            } else {
+              if (error.response.config.url.includes('login')) {
+                toast.error('Credenciais inválidas');
+              }
+            }
+          }
+
+          if (error?.response?.status !== 401) {
+            toast.error(
+              'Ops… ocorreu uma falha na sua requisição, tente novamente em instantes.',
+            );
+          }
+
+          return Promise.reject(error);
+        },
+      );
+    }
+
     function loadStoragedData() {
       const storagedUser = localStorage.getItem('@user');
       const storagedToken = localStorage.getItem('@token');
 
       if (storagedUser && storagedToken) {
         api.defaults.headers.Authorization = `Bearer ${storagedToken}`;
-        api.interceptors.response.use(
-          function(response) {
-            return response;
-          },
-          function(error) {
-            if (error.response.status === 401) {
-              signOut();
-            }
-            return Promise.reject(error);
-          },
-        );
         setUser(JSON.parse(storagedUser));
       }
       setLoading(false);
     }
+
+    setInterceptors();
     loadStoragedData();
   }, []);
 
