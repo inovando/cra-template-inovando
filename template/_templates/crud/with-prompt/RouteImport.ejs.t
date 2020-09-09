@@ -1,8 +1,8 @@
 ---
 inject: true
 to: src/routes/config.js
-skip_if: "import <%= h.changeCase.pascal(name) %>"
+skip_if: "const <%= h.changeCase.pascal(name) %> = lazy"
 before: "\nconst config = {"
 ---
-import <%= h.changeCase.pascal(name) %> from 'pages/<%= h.changeCase.pascal(name) %>';
-import <%= h.changeCase.pascal(name) %>Novo from 'modules/<%= h.changeCase.pascal(name) %>Novo';
+const <%= h.changeCase.pascal(name) %> = lazy(() => import('pages/<%= h.changeCase.pascal(name) %>'));
+const <%= h.changeCase.pascal(name) %>Novo = lazy(() => import('modules/<%= h.changeCase.pascal(name) %>Novo'));

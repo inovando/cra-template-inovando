@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy } from 'react';
 
 // Icons
 import DashboardIcon from '@material-ui/icons/Dashboard';
@@ -7,10 +7,12 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
 // Pages
 import Login from 'pages/Login';
-import Dashboard from 'pages/Dashboard';
 import ForgotPassword from 'pages/ForgotPassword';
-import Profile from 'pages/Profile';
-import Users from 'pages/Users';
+
+// Logged Pages
+const Dashboard = lazy(() => import('pages/Dashboard'));
+const Users = lazy(() => import('pages/Users'));
+const Profile = lazy(() => import('pages/Profile'));
 
 const config = {
   public: [

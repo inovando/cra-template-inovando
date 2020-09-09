@@ -65,6 +65,7 @@ Will prompt some questions to create a new CRUD based on a modal with 1 route (/
 - [x] CRUD Example
 - [x] Commitizen Friendly
 - [x] [Generate Code from CLI](http://hygen.io/)
+- [x] [Code Splitting](https://reactjs.org/docs/code-splitting.html#route-based-code-splitting)
 
 ## FAQ
 

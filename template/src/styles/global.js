@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
+  html {
+    word-break: normal;
+  }
+
   #root {
     display: flex;
     flex-direction: column;
