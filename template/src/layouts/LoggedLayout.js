@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
@@ -18,7 +18,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Inovando from 'images/inovando-horizontal.svg';
 import ListItemLink from 'components/ListItemLink';
 import { useAuth } from 'contexts/auth';
-import { useLocation, matchPath, Redirect } from 'react-router-dom';
+import { useLocation, matchPath, Redirect, useHistory } from 'react-router-dom';
 import config from 'routes/config';
 
 const drawerWidth = 240;
@@ -70,6 +70,7 @@ function LoggedLayout(props) {
   const { window, children, routes } = props;
   const classes = useStyles();
   const theme = useTheme();
+  const history = useHistory();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let location = useLocation();
 
@@ -77,6 +78,12 @@ function LoggedLayout(props) {
     .map(key => config[key])
     .flat()
     .find(route => matchPath(location.pathname, route));
+
+  useEffect(() => {
+    history.listen(() => {
+      setMobileOpen(false);
+    });
+  }, [history]);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
