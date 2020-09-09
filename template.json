@@ -4,7 +4,9 @@
             "serve": "serve -s build",
             "build-and-serve": "yarn build && yarn serve",
             "mock": "json-server server.js --port 3010",
-            "release": "standard-version --no-verify"
+            "release": "standard-version --no-verify",
+            "generate:crud-modal": "hygen crud-modal with-prompt",
+            "generate:crud": "hygen crud with-prompt"
         },
         "dependencies": {
             "@material-ui/core": "^4.9.4",
@@ -33,7 +35,8 @@
             "react-toastify": "^6.0.6",
             "@commitlint/cli": "^9.0.1",
             "@commitlint/config-conventional": "^9.0.1",
-            "standard-version": "^8.0.0"
+            "standard-version": "^8.0.0",
+            "hygen": "^6.0.4"
         },
         "eslintConfig": {
             "extends": "@santospatrick/eslint-config-react",

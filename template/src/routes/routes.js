@@ -8,7 +8,7 @@ import LoggedLayout from 'layouts/LoggedLayout';
 import config from './config';
 
 function Routes() {
-  const { loading } = useAuth();
+  const { loading = true } = useAuth();
 
   if (loading) return null;
 
@@ -21,11 +21,13 @@ function Routes() {
           </Route>
         ))}
         <LoggedLayout routes={config}>
-          {config.protected.map(({ component: Component, ...rest }, i) => (
-            <PrivateRoute key={i} {...rest}>
-              <Component />
-            </PrivateRoute>
-          ))}
+          <Switch>
+            {config.protected.map(({ component: Component, ...rest }, i) => (
+              <PrivateRoute key={i} {...rest}>
+                <Component />
+              </PrivateRoute>
+            ))}
+          </Switch>
         </LoggedLayout>
       </Switch>
     </Router>
