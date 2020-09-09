@@ -13,7 +13,7 @@ sh: yarn eslint --fix src/routes/config.js
       icon: <<%= h.changeCase.pascal(icon) %>Icon />,
     },
     {
-      path: '/<%= h.inflection.dasherize(name) %>/new,
+      path: '/<%= h.inflection.dasherize(name) %>/new',
       component: <%= h.changeCase.pascal(name) %>Novo,
       title: '<%= title %>',
       exact: true,
