@@ -34,6 +34,8 @@ yarn mock # Mock server (to see table example)
 
 4. Done 🎉
 
+5. (Optional) If you need PWA, don't forget to change icons at `public/site.webmanifest`
+
 ## Scripts
 
 ### `yarn serve`
@@ -68,8 +70,8 @@ Will prompt some questions to create a new CRUD based on a modal with 1 route (/
 - [x] [Code Splitting](https://reactjs.org/docs/code-splitting.html#route-based-code-splitting)
 - [x] [Sentry](https://sentry.io/)
 - [x] [PWA Ready](https://web.dev/progressive-web-apps/) (All required variations can be [generated with Real Favicon Generator](https://realfavicongenerator.net/))
-- [ ] [date-fns](https://date-fns.org/)
-- [ ] [Numeral.js](http://numeraljs.com/)
+- [x] [date-fns](https://date-fns.org/)
+- [x] [Numeral.js](http://numeraljs.com/)
 
 ## FAQ
 

@@ -37,7 +37,9 @@
             "@commitlint/config-conventional": "^9.0.1",
             "standard-version": "^8.0.0",
             "hygen": "^6.0.4",
-            "@sentry/browser": "^5.23.0"
+            "@sentry/browser": "^5.23.0",
+            "date-fns": "^2.16.1",
+            "numeral": "^2.0.6"
         },
         "eslintConfig": {
             "extends": "@santospatrick/eslint-config-react",
