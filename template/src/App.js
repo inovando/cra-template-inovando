@@ -1,5 +1,6 @@
 import React from 'react';
-import { ThemeProvider } from '@material-ui/core';
+import { ThemeProvider } from 'styled-components';
+import { MuiThemeProvider, StylesProvider } from '@material-ui/core';
 import { ToastContainer } from 'react-toastify';
 
 import GlobalStyle from 'styles/global';
@@ -10,11 +11,15 @@ import { AuthProvider } from 'contexts/auth';
 function App() {
   return (
     <AuthProvider>
-      <ThemeProvider theme={theme}>
-        <Routes />
-        <GlobalStyle />
-        <ToastContainer autoClose={3000} />
-      </ThemeProvider>
+      <StylesProvider injectFirst>
+        <MuiThemeProvider theme={theme}>
+          <ThemeProvider theme={theme}>
+            <Routes />
+            <GlobalStyle />
+            <ToastContainer autoClose={3000} />
+          </ThemeProvider>
+        </MuiThemeProvider>
+      </StylesProvider>
     </AuthProvider>
   );
 }

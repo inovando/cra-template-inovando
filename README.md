@@ -72,6 +72,7 @@ Will prompt some questions to create a new CRUD based on a modal with 1 route (/
 - [x] [PWA Ready](https://web.dev/progressive-web-apps/) (All required variations can be [generated with Real Favicon Generator](https://realfavicongenerator.net/))
 - [x] [date-fns](https://date-fns.org/)
 - [x] [Numeral.js](http://numeraljs.com/)
+- [ ] [JS Brasil](https://geradorbrasileiro.com)
 
 ## FAQ
 
