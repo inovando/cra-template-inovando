@@ -73,6 +73,7 @@ Will prompt some questions to create a new CRUD based on a modal with 1 route (/
 - [x] [date-fns](https://date-fns.org/)
 - [x] [Numeral.js](http://numeraljs.com/)
 - [ ] [JS Brasil](https://geradorbrasileiro.com)
+- [ ] [SWR](https://swr.vercel.app/)
 
 ## FAQ
 
