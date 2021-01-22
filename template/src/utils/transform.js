@@ -13,6 +13,11 @@ export function getFormattedDate(date, code = 'P') {
   return format(parseISO(date), code, { locale });
 }
 
+export function getFormattedNumber(number, format = '0,0[.]00') {
+  if (isNaN(number)) return '';
+  return numeral(number || 0).format(format);
+}
+
 export function getMoney(number) {
   if (isNaN(number)) return '';
   return numeral(number || 0).format('$ 0,0[.]00');
