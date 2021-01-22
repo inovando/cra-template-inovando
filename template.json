@@ -39,7 +39,8 @@
             "hygen": "^6.0.4",
             "@sentry/browser": "^5.23.0",
             "date-fns": "^2.16.1",
-            "numeral": "^2.0.6"
+            "numeral": "^2.0.6",
+            "js-brasil": "^2.2.0"
         },
         "eslintConfig": {
             "extends": "@santospatrick/eslint-config-react",

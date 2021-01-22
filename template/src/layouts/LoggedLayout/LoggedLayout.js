@@ -5,68 +5,24 @@ import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core/styles';
 import Inovando from 'images/inovando-horizontal.svg';
 import ListItemLink from 'components/ListItemLink';
 import { useAuth } from 'contexts/auth';
 import { useLocation, matchPath, Redirect, useHistory } from 'react-router-dom';
 import config from 'routes/config';
-
-const drawerWidth = 240;
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    minHeight: '100%',
-    [theme.breakpoints.up('sm')]: {
-      paddingLeft: drawerWidth,
-    },
-  },
-  drawer: {
-    [theme.breakpoints.up('sm')]: {
-      width: drawerWidth,
-      flexShrink: 0,
-    },
-  },
-  appBar: {
-    [theme.breakpoints.up('sm')]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-    },
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.up('sm')]: {
-      display: 'none',
-    },
-  },
-  toolbar: {
-    ...theme.mixins.toolbar,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  content: {
-    flexGrow: 1,
-    paddingTop: 84,
-    paddingBottom: 20,
-  },
-}));
+import { Avatar, Box, ListItemAvatar } from '@material-ui/core';
+import useStyles from './useStyles';
 
 function LoggedLayout(props) {
-  const { signOut } = useAuth();
+  const { user, signOut } = useAuth();
   const { window, children, routes } = props;
   const classes = useStyles();
   const theme = useTheme();
@@ -94,7 +50,7 @@ function LoggedLayout(props) {
   }
 
   const drawer = (
-    <div>
+    <Box className={classes.menu}>
       <div className={classes.toolbar}>
         <img
           draggable={false}
@@ -115,14 +71,28 @@ function LoggedLayout(props) {
             />
           ))}
       </List>
-      <Divider />
-      <ListItem button onClick={signOut}>
-        <ListItemIcon>
-          <ExitToAppIcon />
-        </ListItemIcon>
-        <ListItemText primary="Sair" />
-      </ListItem>
-    </div>
+      <Box mt="auto">
+        <Divider />
+        <ListItem className={classes.loggedUser}>
+          <ListItemAvatar>
+            <Avatar alt="Usuário logado" src={user?.photoUrl} />
+          </ListItemAvatar>
+          <ListItemText
+            disableTypography
+            primary={user?.name || 'Sem nome'}
+            secondary={
+              <button
+                className={classes.logoutButton}
+                component="button"
+                onClick={signOut}
+              >
+                Sair
+              </button>
+            }
+          />
+        </ListItem>
+      </Box>
+    </Box>
   );
 
   const container =

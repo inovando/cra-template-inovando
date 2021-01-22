@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Form, Field } from 'react-final-form';
 import createDecorator from 'final-form-focus';
@@ -7,11 +7,16 @@ import Button from '@material-ui/core/Button';
 
 import { validate } from 'utils/validate';
 import { schema } from './schema';
-import { Box, Link, Grid } from '@material-ui/core';
+import { Box, Link, Grid, InputAdornment, IconButton } from '@material-ui/core';
+import { Visibility, VisibilityOff } from '@material-ui/icons';
 
 const focusOnErrors = createDecorator();
 
 function LoginForm({ onSubmit }) {
+  const [showPassword, setShowPassword] = useState(false);
+  const handleClickShowPassword = () =>
+    setShowPassword(prevState => !prevState);
+
   return (
     <Form
       onSubmit={onSubmit}
@@ -30,12 +35,24 @@ function LoginForm({ onSubmit }) {
           />
           <Field
             name="password"
-            type="password"
+            type={showPassword ? 'text' : 'password'}
             component={TextField}
             label="Password"
             margin="normal"
             fullWidth
             variant="outlined"
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                  >
+                    {showPassword ? <Visibility /> : <VisibilityOff />}
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
           />
           <Grid
             container
