@@ -6,7 +6,10 @@
             "mock": "json-server server.js --port 3010",
             "release": "standard-version --no-verify",
             "generate:crud-modal": "hygen crud-modal with-prompt",
-            "generate:crud": "hygen crud with-prompt"
+            "generate:crud": "hygen crud with-prompt",
+            "e2e": "cypress open",
+            "e2e:chrome": "cypress run --headless --browser chrome",
+            "e2e:chromium": "cypress run --headless --browser chromium" 
         },
         "dependencies": {
             "@material-ui/core": "^4.9.4",
@@ -40,12 +43,19 @@
             "@sentry/browser": "^5.23.0",
             "date-fns": "^2.16.1",
             "numeral": "^2.0.6",
-            "js-brasil": "^2.2.0"
+            "js-brasil": "^2.2.0",
+            "cypress": "^6.3.0"
         },
         "eslintConfig": {
             "extends": "@santospatrick/eslint-config-react",
             "rules": {
                 "react/display-name": "off"
+            },
+            "globals": {
+                "cy": true,
+                "context": true,
+                "Cypress": true,
+                "assert": true
             }
         },
         "prettier": "@santospatrick/prettier-config",

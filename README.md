@@ -36,6 +36,14 @@ yarn mock # Mock server (to see table example)
 
 5. (Optional) If you need PWA, don't forget to change icons at `public/site.webmanifest`
 
+6. (Optional) If your project will use Cypress and your OS is Linux Ubuntu/Debian, you need to run the following commands:
+
+```bash
+sudo apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+```
+
+7. (Optional) Duplicate `cypress.env.example.json` to `cypress.env.json` fulfilling variables as needed
+
 ## Scripts
 
 ### `yarn serve`
@@ -73,6 +81,7 @@ Will prompt some questions to create a new CRUD based on a modal with 1 route (/
 - [x] [date-fns](https://date-fns.org/)
 - [x] [Numeral.js](http://numeraljs.com/)
 - [x] [JS Brasil](https://geradorbrasileiro.com)
+- [x] [Cypress](https://www.cypress.io/)
 - [ ] [SWR](https://swr.vercel.app/)
 
 ## FAQ
