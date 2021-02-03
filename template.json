@@ -44,7 +44,8 @@
             "date-fns": "^2.16.1",
             "numeral": "^2.0.6",
             "js-brasil": "^2.2.0",
-            "cypress": "^6.3.0"
+            "cypress": "^6.3.0",
+            "cypress-file-upload": "^5.0.2"
         },
         "eslintConfig": {
             "extends": "@santospatrick/eslint-config-react",
